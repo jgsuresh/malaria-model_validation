@@ -54,6 +54,16 @@ def set_param_fn(config):
     config.parameters.Report_Gametocyte_Smear_Sensitivity = 0.01  # 0.1
     config.parameters.Report_Parasite_Smear_Sensitivity = 0.01  # 0.1
 
+    # Try running with expanded antigen space
+    max_individual_infections_increase_factor = 7
+    other_antigen_increase_factor = max_individual_infections_increase_factor**0.5
+    config.parameters.Max_Individual_Infections = 3 * max_individual_infections_increase_factor
+    config.parameters.Falciparum_MSP_Variants = round(32*other_antigen_increase_factor)
+    config.parameters.Falciparum_Nonspecific_Types = round(76*other_antigen_increase_factor)
+    config.parameters.Falciparum_PfEMP1_Variants = round(1070*other_antigen_increase_factor)
+
+
+
     # config.parameters.Clinical_Fever_Threshold_High = 0.1
     # config.parameters.Clinical_Fever_Threshold_Low = 0.1
     # config.parameters.pop("Serialized_Population_Filenames")

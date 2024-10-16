@@ -1,0 +1,9 @@
+report/_plots*
+.idea/
+*.log
+simulations/.snakemake/
+*/__pycache__/*
+simulations/COMPS_ID
+simulations/output*
+simulations/Old_Eradication
+simulations/analyzers/__pycache__/*
