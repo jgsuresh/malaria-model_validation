@@ -55,13 +55,31 @@ def set_param_fn(config):
     config.parameters.Report_Parasite_Smear_Sensitivity = 0.01  # 0.1
 
     # Try running with expanded antigen space
-    max_individual_infections_increase_factor = 7
-    other_antigen_increase_factor = max_individual_infections_increase_factor**0.5
-    config.parameters.Max_Individual_Infections = 3 * max_individual_infections_increase_factor
-    config.parameters.Falciparum_MSP_Variants = round(32*other_antigen_increase_factor)
-    config.parameters.Falciparum_Nonspecific_Types = round(76*other_antigen_increase_factor)
-    config.parameters.Falciparum_PfEMP1_Variants = round(1070*other_antigen_increase_factor)
+    # config.parameters.Max_Individual_Infections = 3 * max_individual_infections_increase_factor
+    # max_individual_infections_increase_factor = 7
+    # other_antigen_increase_factor = max_individual_infections_increase_factor**0.5 * 0.48/0.54
+    # config.parameters.Falciparum_MSP_Variants = round(32*other_antigen_increase_factor)
+    # config.parameters.Falciparum_Nonspecific_Types = round(76*other_antigen_increase_factor)
+    # config.parameters.Falciparum_PfEMP1_Variants = round(1070*other_antigen_increase_factor)
 
+    # Try a "good-fit" 20-max-infections run from Tobias Holden. 11/19/24
+    # config.parameters.Max_Individual_Infections = 20
+    # config.parameters.Antigen_Switch_Rate = 5.142077320821176e-09 # default:7.65e-10
+    # config.parameters.Base_Gametocyte_Fraction_Male = 0.2043390314448797 # default:0.2
+    # config.parameters.Base_Gametocyte_Mosquito_Survival_Rate = 0.000961769 # default:0.00088
+    # config.parameters.Base_Gametocyte_Production_Rate = 0.3270759557024592 # default:0.0615
+    # config.parameters.Falciparum_MSP_Variants = 1 # default:32
+    # config.parameters.Falciparum_Nonspecific_Types = 102 # default:76
+    # config.parameters.Falciparum_PfEMP1_Variants = 2633 # default:1070
+    # config.parameters.Fever_IRBC_Kill_Rate = 867.8046693042583 # default:1.4
+    # config.parameters.Gametocyte_Stage_Survival_Rate = 0.8375622366632939 # default:0.5886
+    # config.parameters.MSP1_Merozoite_Kill_Fraction = 0.47869092622274845 # default:0.511735322
+    # config.parameters.Nonspecific_Antibody_Growth_Rate_Factor = 110.92328271035161 # default:0.5
+    # config.parameters.Nonspecific_Antigenicity_Factor = 0.088390561 # default:0.4151
+    # config.parameters.Pyrogenic_Threshold = 3531.9755568364235 # default:15000
+    # config.parameters.Cytokine_Gametocyte_Inactivation = 0.005139703 # default:0.02
+
+    config.parameters.Max_Individual_Infections = 100
 
 
     # config.parameters.Clinical_Fever_Threshold_High = 0.1
